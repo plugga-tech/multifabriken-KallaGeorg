@@ -1,3 +1,5 @@
-interface Product {
-    void getAmmount(int ammount);
+
+public class Product {
+
 }
+   

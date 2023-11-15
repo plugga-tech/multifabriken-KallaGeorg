@@ -1,7 +1,13 @@
+
 import java.util.Scanner;
 
 public class App {
+     
     public static void main(String[] args) throws Exception {
+        
+        
+        
+        
         Scanner input = new Scanner(System.in);
         boolean run=true;
         String val;
@@ -12,24 +18,38 @@ public class App {
             if(val.equals("1") ||val.equals("2")||val.equals("3") || val.equals("4") || val.equals("5")||val.equals("6")){
              switch(val){
                 case "1" :
+                      
                       System.out.print("\033[2J\033[1;1H");
                       System.out.println("Bilar\n*****");
+                     
+
                 break;
                 case "2":
+                     
                       System.out.print("\033[2J\033[1;1H");  
                       System.out.println("Rör\n****");
+                    
                 break;
                 case "3" :
+                  
                       System.out.print("\033[2J\033[1;1H");
                       System.out.println("Godis\n******");
+                     ;
+
                 break;
                 case "4" :
+                      
                       System.out.print("\033[2J\033[1;1H");
                       System.out.println("Havremjölk\n***********");
+                      
+                     
                 break;
                 case "5" :
+                     
                       System.out.print("\033[2J\033[1;1H");
                       System.out.println("Din varukorg\n*************");
+                    
+                     
                 break;
                 case "6" :
                       System.out.print("\033[2J\033[1;1H");
@@ -46,6 +66,7 @@ public class App {
              System.out.print("\033[2J\033[1;1H");
              System.out.println((char)27+"[01;31mDu måste välja mellan siffra 1 - 5 i menyn!\nInga bokstäver eller andra siffror!"+(char)27+"[00;00m");
             }
+              
            
             
 
