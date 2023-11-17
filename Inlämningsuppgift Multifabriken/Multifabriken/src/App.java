@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class App {
       static Scanner input = new Scanner(System.in);
-      static int val;
+      static String val;
       static String userString;
       static double userDouble;
       static float userFloat;
@@ -18,61 +18,58 @@ public class App {
         boolean run=true;
        
         while(run){
-            meny();            
-            if(val > 0 && val < 7){
-             switch(val){
-                case 1 :
-                      bil();
-                break;
-
-                case 2 :
-                     System.out.print("\033[2J\033[1;1H");
-                     System.out.print("\tÖnskad diameter: ");
-                     if(input.hasNextDouble() && input.nextDouble() > 0)
-                     userDouble = input.nextDouble();
-                     else
-                     felmeddelande2();
+            meny(); 
                      
-
-                     System.out.print("\tÖnskad längd: ");
-                     if(input.hasNextFloat() && input.nextFloat() > 0){
-                     userFloat = input.nextFloat();}
-                     else
-                     felmeddelande2();
-                        
-
-                     rör();
+           if(val.equals("1")||val.equals("2")||val.equals("3")||val.equals("4")||val.equals("5")|| val.equals("6"))
+            {System.out.println("Menyval korrekt!");}
+            else{
+                  System.out.print("\033[2J\033[1;1H");
+                  System.out.println((char)27+"\t[01;31mAntingen har du träffat en ogiltig menyval(1-6)/\n\teller du skrev bokstäver i stället för siffror\n\tdär du ska mata in en siffra!"+(char)27+"[00;00m");
+                  continue;
+            }
+             switch(val){
+                case "1" :
+                      bil();
+                      
                 break;
 
-                case 3 :
-                     godis(); 
+                case "2" :
+                     
+                    rör();
                 break;
 
-                case 4 :
-                      havredryck();
+                case "3" :
+                godis();
+                  
                 break;
 
-                case 5 :
+                case "4" :
+                havredryck();
+                 
+            
+                break;
+
+                case "5" :
                      varukorg();
                 break;
 
-                case 6 :
+                case "6" :
                       run = run();
                 break;
 
                 default :
                      
-                     // System.out.println((char)27+"\t[01;31mFel!"+(char)27+"[00;00m");
+                     System.out.println((char)27+"\t[01;31mFel!"+(char)27+"[00;00m");
                 break;
              }
-            }
-            else{
-                  System.out.print("\033[2J\033[1;1H");
-                  System.out.println((char)27+"\t[01;31mDu måste välja mellan siffra 1 - 5 i menyn!\n\tInga bokstäver eller andra siffror!"+(char)27+"[00;00m");
-            }
-        }
+             
+           
+        
+      }
+                    
         input.close();
-    }
+
+}
       static String taEmot1(Scanner input){
       System.out.print("\tÖnskad bilmärke: ");
       if(input.hasNextLine()){
@@ -100,11 +97,12 @@ public class App {
       }
       return userString;
     }
-     /*  static double taEmot4(Scanner input){
+     static double taEmot4(Scanner input){
       System.out.print("\tÖnskad diameter: ");
-      if(input.hasNextDouble() && input.nextDouble() > 0){
-      userDouble = input.nextDouble();}
-      else
+      if(input.hasNextDouble())
+      userDouble = input.nextDouble();
+      input.nextLine();
+      if(userDouble <= 0)
       felmeddelande2();
      
       return userDouble;
@@ -114,79 +112,78 @@ public class App {
 
       static float taEmot5(Scanner input){
       System.out.print("\tÖnskad längd: ");
-      if(input.hasNextFloat()){
+      if(input.hasNextFloat())
        userFloat = input.nextFloat();
+       input.nextLine();
        if (userFloat<=0)
        felmeddelande2();
-      }return userFloat;*/
-      
+      return userFloat;
+    }
       
     
       static String taEmot6(Scanner input){
       System.out.print("\tÖnskad smak: ");
-      if(input.hasNextLine()){
-       userString = input.nextLine();
-      }else{
-       felmeddelande1();
-      }
+      if(input.hasNextLine())
+      userString = input.nextLine();
+      else
+      felmeddelande1();
       return userString;
     }
       static int taEmot7(Scanner input){
       System.out.print("\tÖnskad antal godis per påse: ");
-      if(input.hasNextInt()){
+      if(input.hasNextInt())
        userInt = input.nextInt();
+       input.nextLine();
        if(userInt<=0)
        felmeddelande2();
-      }
       return userInt;
     }
       static double taEmot8(Scanner input){
       System.out.print("\tÖnskad fetthalt [%]: ");
-      if(input.hasNextDouble()){
+      if(input.hasNextDouble())
        userDouble = input.nextDouble();
+       input.nextLine();
       if(userDouble<=0)
        felmeddelande2();
-      }
       return userDouble;
     }
       static double taEmot9(Scanner input){
       System.out.print("\tÖnskad litermängd: ");
-      if(input.hasNextDouble()){
+      if(input.hasNextDouble())
        userDouble = input.nextDouble();
+       input.nextLine();
        if(userDouble <= 0)
-       felmeddelande2();
-      } 
+       felmeddelande2(); 
       return userDouble;
     }
     static void meny(){
        System.out.println("----- ----- ----- ----- ----- ----- ----- ----- -----\n----- ----- ----- ----- ----- ----- ----- ----- -----");
-       System.out.print("\tMultifabriken\n\t***************\n\tVälkommen till Multifabrikens online-shop!\n\tVälj vilka produkter du vill köpa!\n\t[1]Bilar\n\t[2]Rör\n\t[3]Godis\n\t[4]Havremjölk\n\t[5]Visa varukorgen\n\t[6]Avsluta programmet\n\tVälj mellan 1-6 : ");
-       val = input.nextInt();
+       System.out.print("\tMultifabriken\n\t***************\n\tVälkommen till Multifabrikens online-shop!\n\tVälj vilka produkter du vill köpa!\n\t[1]Bilar\n\t[2]Rör\n\t[3]Godis\n\t[4]Havredryck\n\t[5]Visa varukorgen\n\t[6]Avsluta programmet\n\tVälj mellan 1-6 : ");
+       val = input.nextLine();
     }
     static void bil(){
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tBilar\n\t*****");
-       input.nextLine();
        car.adder(taEmot1(input),taEmot2(input),taEmot3(input));
     }
     static void rör(){
-       System.out.print("\033[2J\033[1;1H");  
+      System.out.print("\033[2J\033[1;1H");  
        System.out.println("\tRör\n\t****");
-       pipe.adder(userDouble,userFloat);
+       pipe.adder(taEmot4(input),taEmot5(input));
 
     }
     static void godis(){
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tGodis\n\t******");
-       input.nextLine();
        candy.adder(taEmot6(input),taEmot7(input));
     }
-    static void havredryck(){
-      System.out.print("\033[2J\033[1;1H");
-      System.out.println("\tHavremjölk\n\t***********");
-      oatmilk.adder(taEmot8(input),taEmot9(input));
-
+     static void havredryck(){
+       System.out.print("\033[2J\033[1;1H");
+       System.out.println("\tHavredryck\n\t******");
+       oatmilk.adder(taEmot8(input),taEmot9(input));
     }
+
+   
     static void varukorg(){
       System.out.print("\033[2J\033[1;1H");
       System.out.println("\tDin varukorg\n\t*************");
