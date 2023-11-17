@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Candy extends Product{
+public class Candy {
   private String taste;
   private int pieces;
 
   List <Candy> candies = new ArrayList<>();
 
-  public void candiesAdder(String taste, int pieces){
+  public void candiesAdder(){
     candies.add(new Candy(taste,pieces));
   }
   public void candiesPrint(){

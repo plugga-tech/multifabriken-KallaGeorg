@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Oatmilk extends Product{
+public class Oatmilk{
     private double fettContend;
     private double liter;
 
@@ -14,7 +14,7 @@ public class Oatmilk extends Product{
         for(Oatmilk oatmilk: oatmilks){
             System.out.println("---------------------------------------------------");
             System.out.println("Havredryck\n***********");
-            System.out.println("Fetthalt: "+oatmilk.getFettContend()+"% /"+oatmilk.getLiter()+" liter.");
+            System.out.println("Fetthalt: "+oatmilk.getFettContend()+" % / "+oatmilk.getLiter()+" liter.");
         }
     }
 

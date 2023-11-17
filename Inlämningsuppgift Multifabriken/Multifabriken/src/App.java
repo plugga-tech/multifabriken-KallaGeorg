@@ -2,9 +2,12 @@
 import java.util.Scanner;
 
 public class App {
-     
+      static String userString;
+      static double userDouble;
+      static float userFloat;
+      static int userInt;
     public static void main(String[] args) throws Exception {
-        
+       
         
         
          
@@ -16,8 +19,8 @@ public class App {
         boolean run=true;
         String val;
         while(run){
-            System.out.println("--------------------------------------------\n--------------------------------------------");
-            System.out.print("Multifabriken\n***************\nVälkommen till Multifabrikens online-shop!\nVälj vilka produkter du vill köpa!\n[1]Bilar\n[2]Rör\n[3]Godis\n[4]Havremjölk\n[5]Visa varukorgen\n[6]Avsluta programmet\nVälj mellan 1-6 : ");
+            System.out.println("----- ----- ----- ----- ----- ----- ----- ----- -----\n----- ----- ----- ----- ----- ----- ----- ----- -----");
+            System.out.print("\tMultifabriken\n\t***************\n\tVälkommen till Multifabrikens online-shop!\n\tVälj vilka produkter du vill köpa!\n\t[1]Bilar\n\t[2]Rör\n\t[3]Godis\n\t[4]Havremjölk\n\t[5]Visa varukorgen\n\t[6]Avsluta programmet\n\tVälj mellan 1-6 : ");
                         
             val = input.next();
             if(val.equals("1") ||val.equals("2")||val.equals("3") || val.equals("4") || val.equals("5")||val.equals("6")){
@@ -25,67 +28,64 @@ public class App {
                 case "1" :
                       
                       System.out.print("\033[2J\033[1;1H");
-                      System.out.println("Bilar\n*****");
-                      System.out.print("Bilmärke:");
+                      System.out.println("\tBilar\n\t*****");
+                      System.out.print("\tÖnskad bilmärke: ");
                       input.nextLine();
                       String brand = input.nextLine();
                       car.setBrand(brand);
-                      System.out.print("Bilens önskade färg:");
-                     
+                      System.out.print("\tBilens önskade färg: ");
                       String color = input.nextLine();
                       car.setColor(color);
-                      System.out.print("Önskad skrift på registreingsskyltet:");
-                     
+                      System.out.print("\tÖnskad skrift på registreringsskyltet: ");
                       String licensePlate = input.nextLine();
                       car.setLicensePlate(licensePlate);
-                      car.carsAdder(car.getColor(),car.getBrand(),car.getLicensePlate());
+                      car.carsAdder();
                      
 
                 break;
                 case "2":
                      
                       System.out.print("\033[2J\033[1;1H");  
-                      System.out.println("Rör\n****");
-                      System.out.print("Skriv önskad diameter: ");
+                      System.out.println("\tRör\n\t****");
+                      System.out.print("\tSkriv önskad diameter: ");
                       input.nextLine();
                       double diameter = input.nextDouble();
                       pipe.setDiameter(diameter);
-                      System.out.print("Skriv önskad längd: ");
+                      System.out.print("\tSkriv önskad längd: ");
                       input.nextLine();
                       float length = input.nextFloat();
                       pipe.setLength(length);
-                      pipe.pipesAdder(diameter, length);
+                      pipe.pipesAdder();
                     
                 break;
                 case "3" :
                      
                       System.out.print("\033[2J\033[1;1H");
-                      System.out.println("Godis\n******");
-                      System.out.println("Vilken smak ska dina godis ha?");
-                      System.out.print("Varsågod: ");
+                      System.out.println("\tGodis\n\t******");
+                      System.out.println("\tVilken smak ska dina godis ha?");
+                      System.out.print("\tVarsågod: ");
                       input.nextLine();
                       String taste = input.nextLine();
                       candy.setTaste(taste);
-                      
-                      System.out.println("Hur många godies vill du ha?");
-                      System.out.print("Varsågod: ");
+                      System.out.println("\tHur många godies vill du ha?");
+                      System.out.print("\tVarsågod: ");
                       int pieces = input.nextInt();
                       candy.setPieces(pieces);
                       input.nextLine();
-                      candy.candiesAdder(candy.getTaste(),candy.getPieces());
-                      //candy.candiesPrint();
+                      candy.candiesAdder();
+                      
                      
 
                 break;
                 case "4" :
                       
                       System.out.print("\033[2J\033[1;1H");
-                      System.out.println("Havremjölk\n***********");
-                      System.out.print("Skriv in önskad fetthalt: ");
+                      System.out.println("\tHavremjölk\n\t***********");
+                      System.out.print("\tSkriv in önskad fetthalt: ");
                       input.nextLine();
                       double fettContend = input.nextDouble();
                       oatmilk.setFettContend(fettContend);
-                      System.out.print("Skriv in önskad mängd i liter: ");
+                      System.out.print("\tSkriv in önskad mängd i liter: ");
                       input.nextLine();
                       double liter = input.nextDouble();
                       oatmilk.setLiter(liter);
@@ -94,10 +94,11 @@ public class App {
                 case "5" :
                      
                       System.out.print("\033[2J\033[1;1H");
-                      System.out.println("Din varukorg\n*************");
-                      candy.candiesPrint();
+                      System.out.println("\tDin varukorg\n\t*************");
+                      
                       car.carsPrint();
                       pipe.pipesPrint();
+                      candy.candiesPrint();
                       oatmilk.oatmilksPrint();
                       input.nextLine();
 
@@ -106,18 +107,18 @@ public class App {
                 break;
                 case "6" :
                       System.out.print("\033[2J\033[1;1H");
-                      System.out.println("Du slutade av programmet! Välkommen åter!");
+                      System.out.println("\tDu lämnar nu programmet! Välkommen åter!");
                       run = false;
                 break;
                 default :
-                      System.out.println((char)27+"[01;31mFel!"+(char)27+"[00;00m");
+                      System.out.println((char)27+"\t[01;31mFel!"+(char)27+"[00;00m");
                 break;
 
              }
             }
             else{
              System.out.print("\033[2J\033[1;1H");
-             System.out.println((char)27+"[01;31mDu måste välja mellan siffra 1 - 5 i menyn!\nInga bokstäver eller andra siffror!"+(char)27+"[00;00m");
+             System.out.println((char)27+"\t[01;31mDu måste välja mellan siffra 1 - 5 i menyn!\n\tInga bokstäver eller andra siffror!"+(char)27+"[00;00m");
             }
               
            
@@ -125,5 +126,98 @@ public class App {
 
         }
         input.close();
+    }
+    public static String taEmot1(Scanner input){
+      System.out.print("\tÖnskad bilmärke: ");
+      if(input.hasNextLine()){
+       userString = input.nextLine();
+      }else{
+       felmeddelande1();
+      }
+      return userString;
+    }
+     public static String taEmot2(Scanner input){
+      System.out.print("\tBilens önskad färg: ");
+      if(input.hasNextLine()){
+       userString = input.nextLine();
+      }else{
+       felmeddelande1();
+      }
+      return userString;
+    }
+     public static String taEmot3(Scanner input){
+      System.out.print("\tÖnskad skrift på registreringsskylt: ");
+      if(input.hasNextLine()){
+       userString = input.nextLine();
+      }else{
+       felmeddelande1();
+      }
+      return userString;
+    }
+     public static double taEmot4(Scanner input){
+      System.out.print("\tÖnskad diameter: ");
+      if(input.hasNextDouble() && input.nextDouble() > 0){
+       userDouble = input.nextDouble();
+       
+      }else{
+       felmeddelande2();
+      }
+      return userDouble;
+    }
+     public static double taEmot5(Scanner input){
+      System.out.print("\tÖnskad längd: ");
+      if(input.hasNextFloat() && input.nextFloat() > 0){
+       userFloat = input.nextFloat();
+       
+      }else{
+       felmeddelande2();
+      }
+      return userFloat;
+    }
+    public static String taEmot6(Scanner input){
+      System.out.print("\tÖnskad smak: ");
+      if(input.hasNextLine()){
+       userString = input.nextLine();
+      }else{
+       felmeddelande1();
+      }
+      return userString;
+    }
+    public static int taEmot7(Scanner input){
+      System.out.print("\tÖnskad antal godis per påse: ");
+      if(input.hasNextInt() && input.nextInt() > 0){
+       userInt = input.nextInt();
+      }else{
+       felmeddelande2();
+      }
+      return userInt;
+    }
+     public static double taEmot8(Scanner input){
+      System.out.print("\tÖnskad fetthalt [%]: ");
+      if(input.hasNextDouble() && input.nextDouble() > 0){
+       userDouble = input.nextDouble();
+       
+      }else{
+       felmeddelande2();
+      }
+      return userDouble;
+    }
+     public static double taEmot9(Scanner input){
+      System.out.print("\tÖnskad litermängd: ");
+      if(input.hasNextDouble() && input.nextDouble() > 0){
+       userDouble = input.nextDouble();
+       
+      }else{
+       felmeddelande2();
+      }
+      return userDouble;
+    }
+
+
+    public static void felmeddelande1(){
+      System.out.println((char)27+"\t[01;31mFel! Inmatning måste ha textformat!"+(char)27+"[00;00m");
+    }
+    public static void felmeddelande2(){
+      System.out.println((char)27+"\t[01;31mFel! Skriv in en siffra större än noll!"+(char)27+"[00;00m");
     }
 }
