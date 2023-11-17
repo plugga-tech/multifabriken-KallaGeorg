@@ -7,14 +7,19 @@ public class Candy {
 
   List <Candy> candies = new ArrayList<>();
 
-  public void candiesAdder(){
-    candies.add(new Candy(taste,pieces));
+  public void adder(String taste, int pieces){
+    candies.add(new Candy(taste, pieces));
   }
-  public void candiesPrint(){
+  public void printer(){
     for(Candy candy : candies){
-        System.out.println("---------------------------------------------------");
+        System.out.println("------------------------------------------------------");
         System.out.println("Godies\n******");
+        if(candy.getPieces()>0){
         System.out.println("Smak:"+candy.getTaste()+"/ Antal per påse: "+candy.getPieces()+".");
+      }
+      else{
+        System.out.println((char)27+"\t[01;31mFel inmatning vid beställning!"+(char)27+"[00;00m");
+      }
     }
   }
   

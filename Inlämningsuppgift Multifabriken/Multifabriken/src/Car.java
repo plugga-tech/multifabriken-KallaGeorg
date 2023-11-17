@@ -5,6 +5,26 @@ public class Car {
     private String color;
     private String brand;
     private String licensePlate;
+    List<Car> cars = new ArrayList<>();
+
+     public Car(String brand, String color, String licensePlate){
+        this.brand = brand;
+        this.color = color;
+        this.licensePlate = licensePlate;
+    }
+
+    
+    public void adder(String brand, String color, String licensePlate){
+        cars.add(new Car(brand,color,licensePlate));
+    }
+    public void printer(){
+        for(Car car : cars){
+            System.out.println("------------------------------------------------------");
+            System.out.println("Bilar\n*******");
+            System.out.println("Bilmärke: "+car.getBrand()+" / Önskad färg: "+car.getColor()+" / \nÖnskad regestreringsskylt: "+car.getLicensePlate());
+        }
+        
+    }
 
     public String getColor() {
         return color;
@@ -28,27 +48,6 @@ public class Car {
 
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
-    }
-
-    List<Car> cars = new ArrayList<>();
-    
-    public void carsAdder(){
-        cars.add(new Car(color, brand, licensePlate));
-    }
-    public void carsPrint(){
-        for(Car car : cars){
-            System.out.println("---------------------------------------------------");
-            System.out.println("Bilar\n*******");
-            System.out.println("Bilmärke: "+car.getBrand()+" / Önskad färg: "+car.getColor()+" / \nÖnskad regestreringsskylt: "+car.getLicensePlate());
-        }
-        
-    }
-
-    public Car(String color, String brand, String licensePlate){
-        this.color = color;
-        this.brand = brand;
-        this.licensePlate = licensePlate;
-    }
-
+    } 
     
 }

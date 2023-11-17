@@ -7,14 +7,19 @@ public class Oatmilk{
 
     List<Oatmilk> oatmilks = new ArrayList<>();
 
-    public void oatmilksAdder(){
+    public void adder(double fettContend, double liter){
         oatmilks.add(new Oatmilk(fettContend, liter));
     }
-    public void oatmilksPrint(){
+    public void printer(){
         for(Oatmilk oatmilk: oatmilks){
-            System.out.println("---------------------------------------------------");
+            System.out.println("------------------------------------------------------");
             System.out.println("Havredryck\n***********");
+            if(oatmilk.getFettContend()> 0 && oatmilk.getLiter()>0){
             System.out.println("Fetthalt: "+oatmilk.getFettContend()+" % / "+oatmilk.getLiter()+" liter.");
+            }
+            else{
+                System.out.println((char)27+"\t[01;31mFel inmatning vid beställning!"+(char)27+"[00;00m");
+            }
         }
     }
 
