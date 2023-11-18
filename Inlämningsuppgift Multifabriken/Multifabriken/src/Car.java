@@ -21,7 +21,7 @@ public class Car {
         for(Car car : cars){
             System.out.println("------------------------------------------------------");
             System.out.println("Bilar\n*******");
-            System.out.println("Bilmärke: "+car.getBrand()+" / Önskad färg: "+car.getColor()+" / \nÖnskad regestreringsskylt: "+car.getLicensePlate());
+            System.out.println("Bilmärke: "+car.getBrand()+" / Önskad färg: "+car.getColor()+" / \nÖnskad registreringsskylt: "+car.getLicensePlate());
         }
         
     }

@@ -21,32 +21,27 @@ public class App {
             meny(); 
                      
            if(val.equals("1")||val.equals("2")||val.equals("3")||val.equals("4")||val.equals("5")|| val.equals("6"))
-            {System.out.println("Menyval korrekt!");}
+            {System.out.println((char)27+"[01;32m\tMenyval: "+val+" korrekt! Tryck [enter]!"+(char)27+"[00;00m"); input.nextLine();}
             else{
                   System.out.print("\033[2J\033[1;1H");
-                  System.out.println((char)27+"\t[01;31mAntingen har du träffat en ogiltig menyval(1-6)/\n\teller du skrev bokstäver i stället för siffror\n\tdär du ska mata in en siffra!"+(char)27+"[00;00m");
+                  System.out.println((char)27+"\t[01;31mOgiltigt menyval välj mellan 1-6!\n\t Inga bokstäver eller tecken!"+(char)27+"[00;00m");
                   continue;
             }
              switch(val){
                 case "1" :
-                      bil();
-                      
+                     bil();
                 break;
 
                 case "2" :
-                     
                     rör();
                 break;
 
                 case "3" :
-                godis();
-                  
+                    godis();
                 break;
 
                 case "4" :
-                havredryck();
-                 
-            
+                    havredryck();
                 break;
 
                 case "5" :
@@ -58,17 +53,13 @@ public class App {
                 break;
 
                 default :
-                     
                      System.out.println((char)27+"\t[01;31mFel!"+(char)27+"[00;00m");
                 break;
              }
-             
-           
-        
+            
       }
                     
         input.close();
-
 }
       static String taEmot1(Scanner input){
       System.out.print("\tÖnskad bilmärke: ");
@@ -104,7 +95,6 @@ public class App {
       input.nextLine();
       if(userDouble <= 0)
       felmeddelande2();
-     
       return userDouble;
       
       
