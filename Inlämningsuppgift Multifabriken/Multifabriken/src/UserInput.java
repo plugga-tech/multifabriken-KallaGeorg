@@ -33,20 +33,22 @@ public class UserInput {
       return userString;
     }
      static double setValue4(Scanner input){
-      System.out.print("\tÖnskad diameter: ");
+      System.out.print("\tÖnskad diameter [cm]: ");
       if(input.hasNextDouble())
       userDouble = input.nextDouble();
       input.nextLine();
-      if(userDouble <= 0){failuremessage2();}
+      if(userDouble <= 0)
+      failuremessage2();
       return userDouble;
     }
 
       static float setValue5(Scanner input){
-      System.out.print("\tÖnskad längd: ");
+      System.out.print("\tÖnskad längd [cm]: ");
       if(input.hasNextFloat())
        userFloat = input.nextFloat();
        input.nextLine();
-       if (userFloat<=0){failuremessage2();}
+      if (userFloat<=0)
+       failuremessage2();    
        return userFloat;
     }
       
@@ -54,7 +56,7 @@ public class UserInput {
       static String setValue6(Scanner input){
       System.out.print("\tÖnskad smak: ");
       if(input.hasNextLine())
-      userString = input.nextLine();
+      {userString = input.nextLine();}
       else
       failuremessage1();
       return userString;
@@ -64,7 +66,8 @@ public class UserInput {
       if(input.hasNextInt())
        userInt = input.nextInt();
        input.nextLine();
-       if(userInt<=0){ failuremessage2();}
+       if(userInt<=0)
+       failuremessage2();
        return userInt;
     }
       static double setValue8(Scanner input){
@@ -72,7 +75,8 @@ public class UserInput {
       if(input.hasNextDouble())
        userDouble = input.nextDouble();
        input.nextLine();
-      if(userDouble <= 0){ failuremessage2();}
+      if(userDouble <= 0)
+      failuremessage2();
       return userDouble;
     }
       static double setValue9(Scanner input){
@@ -80,7 +84,8 @@ public class UserInput {
       if(input.hasNextDouble())
        userDouble = input.nextDouble();
        input.nextLine();
-       if(userDouble <= 0){failuremessage2();}
+       if(userDouble <= 0)
+       failuremessage2();
        return userDouble;
     }
     static void failuremessage1(){

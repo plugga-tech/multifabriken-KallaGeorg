@@ -18,8 +18,8 @@ public class Oatmilk{
             System.out.println("Fetthalt: "+oatmilk.getFettContend()+" % / "+oatmilk.getLiter()+" liter.");
             }
             else if(oatmilk.getFettContend()>19){
-                System.out.println((char)27+"\t[01;31mVi producera bara havredryck med upp till 19% fetthalt!\n\tAnpassa din beställning, tack!"+(char)27+"[00;00m");
-                System.out.println((char)27+"\t[01;31mDin beställning: Fetthalt = "+ oatmilk.getFettContend()+" % / Litermängd = "+oatmilk.getLiter()+" liter" +(char)27+"[00;00m");   
+                System.out.println((char)27+"\t[01;31mInfo: Vi producera bara havredryck med upp till 19% fetthalt!\n\tAnpassa din beställning, tack!"+(char)27+"[00;00m");
+                System.out.println((char)27+"\t[01;31mDin beställning: Fetthalt = "+oatmilk.getFettContend()+" % / Litermängd = "+oatmilk.getLiter()+" liter"+(char)27+"[00;00m");   
             }
             else{
                 System.out.println((char)27+"\t[01;31mFel inmatning vid beställning!"+(char)27+"[00;00m");
@@ -36,18 +36,8 @@ public class Oatmilk{
         return fettContend;
     }
 
-    public void setFettContend(double fettContend) {
-        this.fettContend = fettContend;
-    }
-
     public double getLiter() {
         return liter;
     }
-
-    public void setLiter(double liter) {
-        this.liter = liter;
-    }
-
-  
     
 }

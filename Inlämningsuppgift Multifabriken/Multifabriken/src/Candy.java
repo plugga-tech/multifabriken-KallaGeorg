@@ -18,8 +18,8 @@ public class Candy {
         System.out.println("Smak:"+candy.getTaste()+"/ Antal: "+candy.getPieces()+" styck");
       }
         else if(candy.getPieces()>5000){
-          System.out.println((char)27+"\t[01;31mMaximal beställmängd för varje sort godies är 5000 styck,\n\tkontaktera kundtjänsten för större beställningar, tack!"+(char)27+"[00;00m");
-          System.out.println((char)27+"\t[01;31mDin beställning: Smak = "+candy.getTaste()+"/ Antal = "+candy.getPieces()+" styck" +(char)27+"[00;00m");
+          System.out.println((char)27+"\t[01;31mInfo: Maximal beställmängd för varje sort godies är 5000 styck,\n\tkontaktera kundtjänsten för större beställningar, tack!"+(char)27+"[00;00m");
+          System.out.println((char)27+"\t[01;31mDin beställning: Smak = "+candy.getTaste()+" / Antal = "+candy.getPieces()+" styck"+(char)27+"[00;00m");
         }
         else{
         System.out.println((char)27+"\t[01;31mFel inmatning vid beställning!"+(char)27+"[00;00m");
@@ -37,18 +37,10 @@ public String getTaste() {
     return taste;
 }
 
-public void setTaste(String taste) {
-    this.taste = taste;
-}
 
 public int getPieces() {
     return pieces;
 }
-
-public void setPieces(int pieces) {
-    this.pieces = pieces;
-}
-
 
 }
 

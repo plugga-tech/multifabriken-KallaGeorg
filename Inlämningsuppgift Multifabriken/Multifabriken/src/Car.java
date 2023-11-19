@@ -30,24 +30,16 @@ public class Car {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
+   
     public String getLicensePlate() {
         return licensePlate;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    } 
+   
     
 }
