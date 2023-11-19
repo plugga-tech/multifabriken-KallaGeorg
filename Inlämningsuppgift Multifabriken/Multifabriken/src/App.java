@@ -4,10 +4,7 @@ import java.util.Scanner;
 public class App {
       static Scanner input = new Scanner(System.in);
       static String choiche;
-      static String userString;
-      static double userDouble;
-      static float userFloat;
-      static int userInt;
+    
        
       static Car car = new Car("","","");
       static Pipe pipe = new Pipe(0,0);
@@ -61,84 +58,7 @@ public class App {
                     
         input.close();
 }
-      static String setValue1(Scanner input){
-      System.out.print("\tÖnskad bilmärke: ");
-      if(input.hasNextLine()){
-       userString = input.nextLine();
-      }else{
-       failuremessage1();
-      }
-      return userString;
-    }
-      static String setValue2(Scanner input){
-      System.out.print("\tBilens önskad färg: ");
-      if(input.hasNextLine()){
-       userString = input.nextLine();
-      }else{
-       failuremessage1();
-      }
-      return userString;
-    }
-      static String setValue3(Scanner input){
-      System.out.print("\tÖnskad skrift på registreringsskylt: ");
-      if(input.hasNextLine()){
-       userString = input.nextLine();
-      }else{
-       failuremessage1();
-      }
-      return userString;
-    }
-     static double setValue4(Scanner input){
-      System.out.print("\tÖnskad diameter: ");
-      if(input.hasNextDouble())
-      userDouble = input.nextDouble();
-      input.nextLine();
-      if(userDouble <= 0){failuremessage2();}
-      return userDouble;
-    }
 
-      static float setValue5(Scanner input){
-      System.out.print("\tÖnskad längd: ");
-      if(input.hasNextFloat())
-       userFloat = input.nextFloat();
-       input.nextLine();
-       if (userFloat<=0){failuremessage2();}
-       return userFloat;
-    }
-      
-    
-      static String setValue6(Scanner input){
-      System.out.print("\tÖnskad smak: ");
-      if(input.hasNextLine())
-      userString = input.nextLine();
-      else
-      failuremessage1();
-      return userString;
-    }
-      static int setvalue7(Scanner input){
-      System.out.print("\tÖnskad antal: ");
-      if(input.hasNextInt())
-       userInt = input.nextInt();
-       input.nextLine();
-       if(userInt<=0){ failuremessage2();}
-       return userInt;
-    }
-      static double setValue8(Scanner input){
-      System.out.print("\tÖnskad fetthalt [%]: ");
-      if(input.hasNextDouble())
-       userDouble = input.nextDouble();
-       input.nextLine();
-      if(userDouble <= 0){ failuremessage2();}
-      return userDouble;
-    }
-      static double setValue9(Scanner input){
-      System.out.print("\tÖnskad litermängd: ");
-      if(input.hasNextDouble())
-       userDouble = input.nextDouble();
-       input.nextLine();
-       if(userDouble <= 0){failuremessage2();}
-       return userDouble;
-    }
     static void menu(){
        System.out.println("----- ----- ----- ----- ----- ----- ----- ----- -----\n----- ----- ----- ----- ----- ----- ----- ----- -----");
        System.out.print("\tMultifabriken\n\t***************\n\tVälkommen till Multifabrikens online-shop!\n\tVälj vilka produkter du vill köpa!\n\t[1]Bilar\n\t[2]Rör\n\t[3]Godis\n\t[4]Havredryck\n\t[5]Visa varukorgen\n\t[6]Avsluta programmet\n\tVälj mellan 1-6 : ");
@@ -147,23 +67,27 @@ public class App {
     static void car(){
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tBilar\n\t*****");
-       car.adder(setValue1(input),setValue2(input),setValue3(input));
+       car.adder(UserInput.setValue1(input),UserInput.setValue2(input),UserInput.setValue3(input));
+       
     }
     static void pipe(){
       System.out.print("\033[2J\033[1;1H");  
        System.out.println("\tRör\n\t****");
-       pipe.adder(setValue4(input),setValue5(input));
+       pipe.adder(UserInput.setValue4(input),UserInput.setValue5(input));
+       
 
     }
     static void candy(){
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tGodis\n\t******");
-       candy.adder(setValue6(input),setvalue7(input));
+       candy.adder(UserInput.setValue6(input),UserInput.setValue7(input));
+       
     }
      static void oatmilk(){
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tHavredryck\n\t******");
-       oatmilk.adder(setValue8(input),setValue9(input));
+       oatmilk.adder(UserInput.setValue8(input),UserInput.setValue9(input));
+       
     }
 
    
@@ -181,13 +105,7 @@ public class App {
       System.out.println("\tDu lämnar nu programmet! Välkommen åter!");
       return false;
     }
-      static void failuremessage1(){
-      System.out.println((char)27+"\t[01;31mFel! Inmatning måste ha textformat!"+(char)27+"[00;00m");
-    }
-      static void failuremessage2(){
-      System.out.println((char)27+"\t[01;31mFel! Skriv in en siffra större än noll! Inga bokstäver eller tecken!"+(char)27+"[00;00m");
-      
-    }
+   
 
 }
 
