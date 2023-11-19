@@ -1,5 +1,8 @@
 
 import java.util.Scanner;
+//----------------------------------------------I---N---F---O---------------B---U---G---G-----------------------------------------------------------------
+//Om man mata in riktiga parameter från början och på nästa gång bokstäver istället för siffror, skapa programmet en dubblett av de riktiga parametrar från innan
+//                             matar man dock in ett negativt tal i mellan, då reagerar felhantering igen och ingen dubblett skapas
 
 
 public class App {
@@ -28,22 +31,27 @@ public class App {
              switch(choice){
                 case "1" :
                      car();
+                     
                 break;
 
                 case "2" :
                     pipe();
+                    
                 break;
 
                 case "3" :
                     candy();
+                   
                 break;
 
                 case "4" :
                     oatmilk();
+                    
                 break;
 
                 case "5" :
                      orderlist();
+                     
                 break;
 
                 case "6" :
@@ -56,41 +64,47 @@ public class App {
              }
             
       }
-                    
-        input.close();
+      input.close();              
+      
 }
 
     static void menu(){
+       
        System.out.println("----- ----- ----- ----- ----- ----- ----- ----- -----\n----- ----- ----- ----- ----- ----- ----- ----- -----");
        System.out.print("\tMultifabriken\n\t***************\n\tVälkommen till Multifabrikens online-shop!\n\tVälj vilka produkter du vill köpa!\n\t[1]Bilar\n\t[2]Rör\n\t[3]Godis\n\t[4]Havredryck\n\t[5]Visa varukorgen\n\t[6]Avsluta programmet\n\tVälj mellan 1-6 : ");
        choice = input.nextLine();
+       
     }
     static void car(){
+       
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tBilar\n\t*****");
        car.adder(UserInput.setValue1(input),UserInput.setValue2(input),UserInput.setValue3(input));
-       input.reset();
+     
        
     }
     static void pipe(){
+      
       System.out.print("\033[2J\033[1;1H");  
        System.out.println("\tRör\n\t****");
        pipe.adder(UserInput.setValue4(input),UserInput.setValue5(input));
-       input.reset();
+      
        
 
     }
     static void candy(){
+     
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tGodis\n\t******");
        candy.adder(UserInput.setValue6(input),UserInput.setValue7(input));
-       input.reset();
+      
     }
      static void oatmilk(){
+      
        System.out.print("\033[2J\033[1;1H");
        System.out.println("\tHavredryck\n\t******");
        oatmilk.adder(UserInput.setValue8(input),UserInput.setValue9(input));
-       input.reset();
+       
        
     }
 

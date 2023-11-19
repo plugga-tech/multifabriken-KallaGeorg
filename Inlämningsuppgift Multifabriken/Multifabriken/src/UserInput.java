@@ -32,7 +32,7 @@ public class UserInput {
       }
       return userString;
     }
-     static double setValue4(Scanner input){
+     static double setValue4(Scanner input){  
       System.out.print("\tÖnskad diameter [cm]: ");
       if(input.hasNextDouble())
       userDouble = input.nextDouble();
