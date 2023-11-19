@@ -93,11 +93,8 @@ public class App {
       if(input.hasNextDouble())
       userDouble = input.nextDouble();
       input.nextLine();
-      if(userDouble <= 0)
-      felmeddelande2();
+      if(userDouble <= 0){felmeddelande2();}
       return userDouble;
-      
-      
     }
 
       static float taEmot5(Scanner input){
@@ -105,9 +102,8 @@ public class App {
       if(input.hasNextFloat())
        userFloat = input.nextFloat();
        input.nextLine();
-       if (userFloat<=0)
-       felmeddelande2();
-      return userFloat;
+       if (userFloat<=0){felmeddelande2();}
+       return userFloat;
     }
       
     
@@ -120,21 +116,19 @@ public class App {
       return userString;
     }
       static int taEmot7(Scanner input){
-      System.out.print("\tÖnskad antal godis per påse: ");
+      System.out.print("\tÖnskad antal: ");
       if(input.hasNextInt())
        userInt = input.nextInt();
        input.nextLine();
-       if(userInt<=0)
-       felmeddelande2();
-      return userInt;
+       if(userInt<=0){ felmeddelande2();}
+       return userInt;
     }
       static double taEmot8(Scanner input){
       System.out.print("\tÖnskad fetthalt [%]: ");
       if(input.hasNextDouble())
        userDouble = input.nextDouble();
        input.nextLine();
-      if(userDouble<=0)
-       felmeddelande2();
+      if(userDouble <= 0){ felmeddelande2();}
       return userDouble;
     }
       static double taEmot9(Scanner input){
@@ -142,9 +136,8 @@ public class App {
       if(input.hasNextDouble())
        userDouble = input.nextDouble();
        input.nextLine();
-       if(userDouble <= 0)
-       felmeddelande2(); 
-      return userDouble;
+       if(userDouble <= 0){felmeddelande2();}
+       return userDouble;
     }
     static void meny(){
        System.out.println("----- ----- ----- ----- ----- ----- ----- ----- -----\n----- ----- ----- ----- ----- ----- ----- ----- -----");

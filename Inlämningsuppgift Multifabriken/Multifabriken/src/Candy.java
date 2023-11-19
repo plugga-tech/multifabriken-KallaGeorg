@@ -12,12 +12,16 @@ public class Candy {
   }
   public void printer(){
     for(Candy candy : candies){
-        System.out.println("------------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
         System.out.println("Godies\n******");
-        if(candy.getPieces()>0){
-        System.out.println("Smak:"+candy.getTaste()+"/ Antal per påse: "+candy.getPieces()+".");
+        if(candy.getPieces()>0 && candy.getPieces()<5001){
+        System.out.println("Smak:"+candy.getTaste()+"/ Antal: "+candy.getPieces()+" styck");
       }
-      else{
+        else if(candy.getPieces()>5000){
+          System.out.println((char)27+"\t[01;31mMaximal beställmängd för varje sort godies är 5000 styck,\n\tkontaktera kundtjänsten för större beställningar, tack!"+(char)27+"[00;00m");
+          System.out.println((char)27+"\t[01;31mDin beställning: Smak = "+candy.getTaste()+"/ Antal = "+candy.getPieces()+" styck" +(char)27+"[00;00m");
+        }
+        else{
         System.out.println((char)27+"\t[01;31mFel inmatning vid beställning!"+(char)27+"[00;00m");
       }
     }
